@@ -5,7 +5,7 @@ import "./Button.css"
 const Button = (props) => {
     let classList = '';
 
-    let types = ['primary', 'danger', 'success', 'warning']
+    let types = ['primary', 'danger', 'success', 'warning', 'default', 'cart']
 
     if (types.includes(props.type)) {
         classList += ` button-${props.type}`
@@ -14,8 +14,12 @@ const Button = (props) => {
         classList += ` button-${props.type}-outline`
     }
     if (props.large) {
-        classList += ` button-large` // Note the spacing here since we are adding to the string!
+        classList += ` button-${props.type}-large` // Note the spacing here since we are adding to the string!
     }
+    if (props.shaded) {
+        classList += ` button-${props.type}-shaded`
+    }
+    
 //onClick is a function created in Button.stories - added as a prop
     return <button onClick={props.onClick}className={classList}>
         {props.label}
