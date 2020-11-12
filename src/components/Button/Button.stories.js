@@ -4,11 +4,18 @@ import { storiesOf } from '@storybook/react';
 import Button from './Button';
 
 //const Icons = {cart: cartIcon}
-
+//create function
 function helloWorld(){
     alert("Button Component Executed props.onClick")
 }
+//'Button' is what the component is called on storybook, module is required to point to js
 storiesOf('Button', module)
+//chain other methods off stories of to add sotrybook component into this method
+//first argument is the name of the story (Button component w/ different looks - called stories)
+//this creates a button called primary in storybook when you run npm start storybook
+//label is what it says on the actual button
+//onClick refers back to function above
+//type references array of different button types listed in button.js
     .add('Primary', () => <Button
         label="Do something"
         onClick={helloWorld}

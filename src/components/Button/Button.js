@@ -5,7 +5,7 @@ import "./Button.css"
 const Button = (props) => {
     let classList = '';
 
-    let types = ['primary', 'danger', 'success', 'warning', 'default', 'cart']
+    let types = ['primary', 'danger', 'success', 'warning', 'default', 'cart', 'like']
 
     if (types.includes(props.type)) {
         classList += ` button-${props.type}`
@@ -19,6 +19,9 @@ const Button = (props) => {
     if (props.shaded) {
         classList += ` button-${props.type}-shaded`
     }
+    if(props.heart){
+        classList += ` button-${props.type}-shaded`
+    }
     
 //onClick is a function created in Button.stories - added as a prop
     return <button onClick={props.onClick}className={classList}>
@@ -26,4 +29,4 @@ const Button = (props) => {
     </button>
     }
 
-export default Button; 
+export default Button;  
